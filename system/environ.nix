@@ -11,9 +11,9 @@
   environment = {
     enableAllTerminfo = true;
     systemPackages = with pkgs; [
+      wireguard-tools ghostty.packages.${system}.default
       gnome.gnome-tweaks adw-gtk3 monaspace roboto
       firefox-wayland openssh gnupg git git-lfs
-      ghostty.packages.${system}.default
     ];
   };
 }
