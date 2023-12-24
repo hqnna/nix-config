@@ -1,5 +1,6 @@
 {
   inputs = {
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.url = "github:nix-community/home-manager";
     ghostty.url = "git+ssh://git@github.com/mitchellh/ghostty";
   };
