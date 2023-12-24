@@ -5,6 +5,7 @@
     hostId = "72c67412";
     hostName = "euphoria";
     networkmanager.enable = true;
+    networkmanager.wifi.powersave = false;
     firewall.enable = false;
 
     timeServers = [
