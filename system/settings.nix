@@ -1,15 +1,23 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, nixpkgs, nix-super, ... }:
 
-{
+let
+  nixPkgs = nix-super.packages.${pkgs.system};
+in {
   nix = {
     settings.cores = 0;
     gc.dates = "weekly";        
     gc.automatic = true;
     settings.max-jobs = 16;
     optimise.automatic = true;
-    optimise.dates = [ "daily" ];    
+    package = nixPkgs.default;
+    optimise.dates = [ "daily" ];
     settings.experimental-features = [
       "nix-command" "flakes"
     ];
+
+    registry = {
+      default.flake = nixpkgs;
+      nixpkgs.flake = nixpkgs;
+    };
   };
 }
