@@ -19,10 +19,8 @@
 
       nix_shell = {
         disabled = false;
-        unknown_msg = "";
-        format = "$state ";
-        impure_msg = "[impure](white)";
-        pure_msg = "[pure](white)";
+        format = "[$state]($style) ";
+        style = "white";
       };
 
       git_branch = {
