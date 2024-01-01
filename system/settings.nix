@@ -12,7 +12,7 @@ in {
     package = nixPkgs.default;
     optimise.dates = [ "daily" ];
     settings.experimental-features = [
-      "nix-command" "flakes"
+      "auto-allocate-uids" "configurable-impure-env"
     ];
 
     registry = {
