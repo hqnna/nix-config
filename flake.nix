@@ -8,7 +8,7 @@
 
   outputs = { self, nixpkgs, ghostty, home-manager, nix-super }@inputs: {
     nixosConfigurations.euphoria = nixpkgs.lib.nixosSystem {
-      modules = [ ./configuration.nix ];
+      modules = [ ./systems/euphoria/configuration.nix ];
       system = "x86_64-linux";
       specialArgs = inputs;
     };
