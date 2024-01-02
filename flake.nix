@@ -7,10 +7,17 @@
   };
 
   outputs = { self, nixpkgs, ghostty, home-manager, nix-super }@inputs: {
-    nixosConfigurations.euphoria = nixpkgs.lib.nixosSystem {
-      modules = [ ./systems/euphoria/configuration.nix ];
-      system = "x86_64-linux";
-      specialArgs = inputs;
+    nixosConfigurations = {
+      euphoria = nixpkgs.lib.nixosSystem {
+        modules = [ ./systems/euphoria/configuration.nix ];
+        system = "x86_64-linux";
+        specialArgs = inputs;
+      };
+      skybox = nixpkgs.lib.nixosSystem {
+        modules =  [ ./systems/skybox/configuration.nix ];
+        system = "x86_64-linux";
+        specialArgs = inputs;
+      };
     };
   };
 }
