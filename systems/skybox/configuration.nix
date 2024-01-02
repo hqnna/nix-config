@@ -21,6 +21,8 @@ in {
     nixpkgs.flake = nixpkgs;
   };
 
+  nix.settings.cores = 0;
+  nix.settings.max-jobs = 12;
   nix.package = nixPkgs.default;
   nix.settings.experimental-features = [ "auto-allocate-uids" "configurable-impure-env" ];
   environment.systemPackages = with pkgs; [ vim wireguard-tools python3 ];
