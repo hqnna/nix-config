@@ -1,4 +1,4 @@
-{ config, lib, pkgs, nix-super, ... }:
+{ config, lib, pkgs, nixpkgs, nix-super, ... }:
 
 let
   nixPkgs = nix-super.packages.${pkgs.system};
