@@ -5,7 +5,7 @@
     enable = true;
     userName = "hanna";
     userEmail = "hanna@hanna.lol";
-    signing.key = "565FA0240544E7ED";
+    signing.key = "042C8C8DA37FDB1E";
     signing.signByDefault = true;
     lfs.enable = true;
 

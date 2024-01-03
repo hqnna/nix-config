@@ -2,14 +2,17 @@
 
 {
   imports = [
+    # Shared Configurations
+    ../../shared/settings.nix
+    ../../shared/locale.nix
+
+    # System Configuration
     ./system/hardware.nix
-    ../shared/settings.nix
     ./system/networking.nix
     ./services/wireguard.nix
     ./services/openssh.nix
     ./services/libvirt.nix
     ./services/nginx.nix
-    ../shared/locale.nix
     ./system/prompt.nix
     ./system/motd.nix
     ./system/boot.nix

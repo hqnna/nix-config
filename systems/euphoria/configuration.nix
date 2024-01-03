@@ -2,14 +2,19 @@
 
 {
   imports = [
-     home-manager.nixosModules.default
+    # Home Manager
+    home-manager.nixosModules.default
+    
+    # Shared Configurations 
+    ../../shared/settings.nix
+    ../../shared/locale.nix
+
+    # System Configuration
     ./services/syncthing.nix
-    ../shared/settings.nix
     ./system/hardware.nix
     ./system/network.nix
     ./system/desktop.nix
     ./system/environ.nix
-    ../shared/locale.nix
     ./system/users.nix
     ./system/boot.nix
   ];
