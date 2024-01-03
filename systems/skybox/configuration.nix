@@ -1,30 +1,20 @@
-{ config, lib, pkgs, nixpkgs, nix-super, ... }:
+{ config, lib, pkgs, ... }:
 
-let
-  nixPkgs = nix-super.packages.${pkgs.system};
-in {
+{
   imports = [
     ./system/hardware.nix
+    ../shared/settings.nix
     ./system/networking.nix
     ./services/wireguard.nix
     ./services/openssh.nix
     ./services/libvirt.nix
     ./services/nginx.nix
-    ./system/locale.nix
+    ../shared/locale.nix
     ./system/prompt.nix
     ./system/motd.nix
     ./system/boot.nix
   ];
 
-  nix.registry = {
-    default.flake = nixpkgs;
-    nixpkgs.flake = nixpkgs;
-  };
-
-  nix.settings.cores = 0;
-  nix.settings.max-jobs = 12;
-  nix.package = nixPkgs.default;
-  nix.settings.experimental-features = [ "auto-allocate-uids" "configurable-impure-env" ];
   environment.systemPackages = with pkgs; [ vim wireguard-tools python3 ];
   system.copySystemConfiguration = true;
   system.stateVersion = "23.11";

@@ -4,12 +4,12 @@
   imports = [
      home-manager.nixosModules.default
     ./services/syncthing.nix
-    ./system/settings.nix
+    ../shared/settings.nix
     ./system/hardware.nix
     ./system/network.nix
     ./system/desktop.nix
     ./system/environ.nix
-    ./system/locale.nix
+    ../shared/locale.nix
     ./system/users.nix
     ./system/boot.nix
   ];
