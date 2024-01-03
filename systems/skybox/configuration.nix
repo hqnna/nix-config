@@ -19,7 +19,6 @@
   ];
 
   environment.systemPackages = with pkgs; [ vim wireguard-tools python3 ];
-  system.copySystemConfiguration = true;
   system.stateVersion = "23.11";
 }
 
