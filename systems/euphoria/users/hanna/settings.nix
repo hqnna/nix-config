@@ -4,6 +4,7 @@
   home.packages = with pkgs; [
     bitwarden discord spotify vscodium-fhs bat
     moonlight-qt thunderbird virt-manager helix
+    cura
   ];
 
   nixpkgs.config.allowUnfree = true;
