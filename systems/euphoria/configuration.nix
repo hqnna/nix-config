@@ -11,6 +11,7 @@
 
     # System Configuration
     ./services/syncthing.nix
+    ./services/sanoid.nix
     ./system/hardware.nix
     ./system/network.nix
     ./system/desktop.nix
